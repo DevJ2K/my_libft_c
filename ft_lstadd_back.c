@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:43:25 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 14:02:56 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:05:26 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*start;
+
 	if (!lst || !new)
 		return ;
 	if (!*lst)

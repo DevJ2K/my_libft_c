@@ -6,22 +6,11 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:54:34 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/09 14:00:10 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:10:19 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -30,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	len_src = ft_strlen((char *)src);
-	len_dst = ft_strlen(dst);
+	len_dst = ft_strlen((const char *)dst);
 	i = 0;
 	if (size == 0)
 		return (len_src);

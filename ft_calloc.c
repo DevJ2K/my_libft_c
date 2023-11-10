@@ -6,27 +6,11 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:39:13 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/07 15:53:25 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/11/10 16:12:22 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-
-void	*ft_memset(void *s, int c, size_t n)
-{
-	unsigned char	*cpy;
-	size_t			i;
-
-	i = 0;
-	cpy = s;
-	while (i < n)
-	{
-		cpy[i] = c;
-		i++;
-	}
-	return (s);
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
