@@ -44,4 +44,7 @@ fclean:	clean;
 
 re:		fclean all
 
+so:
+	gcc *.o --shared -o libft.so
+
 .PHONY: all clean fclean re bonus
