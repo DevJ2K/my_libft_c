@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 13:43:25 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 16:05:26 by tajavon          ###   ########.fr       */
+/*   Created: 2023/11/15 00:43:38 by tajavon           #+#    #+#             */
+/*   Updated: 2023/12/01 12:19:35 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <unistd.h>
+# include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 14
+# endif
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*start;
+char	*get_next_line(int fd);
+int		found_newlines(char *all_read);
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		start = *lst;
-		while (start->next)
-			start = start->next;
-		start->next = new;
-	}
-}
+#endif

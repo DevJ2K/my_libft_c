@@ -6,21 +6,11 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:54:54 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/08 15:01:24 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/11/10 22:32:53 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-unsigned int	ft_strlen(char const *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

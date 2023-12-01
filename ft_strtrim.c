@@ -6,22 +6,11 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:35:19 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/08 23:27:25 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/11/10 22:34:19 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_strlen(char const *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	in_set(char const *set, char const c)
 {
@@ -39,9 +28,9 @@ int	in_set(char const *set, char const c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		s1_len;
+	size_t	i;
+	size_t	j;
+	size_t	s1_len;
 	char	*str;
 
 	i = 0;

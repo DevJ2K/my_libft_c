@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 14:06:12 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 14:11:14 by tajavon          ###   ########.fr       */
+/*   Created: 2023/12/01 12:12:10 by tajavon           #+#    #+#             */
+/*   Updated: 2023/12/01 12:13:01 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+char	*ft_strcpy(char *dest, char *src)
 {
-	del(lst->content);
-	free(lst);
+	int		index;
+
+	index = 0;
+	while (src[index] != '\0')
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	dest[index] = '\0';
+	return (dest);
 }

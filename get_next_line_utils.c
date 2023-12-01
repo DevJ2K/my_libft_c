@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 14:22:28 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 14:48:50 by tajavon          ###   ########.fr       */
+/*   Created: 2023/11/15 00:43:35 by tajavon           #+#    #+#             */
+/*   Updated: 2023/12/01 12:16:21 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	found_newlines(char *all_read)
 {
-	t_list	*temp;
-	t_list	*to_del;
+	int	i;
 
-	if (!lst || !*lst)
-		return ;
-	temp = *lst;
-	while (temp)
+	i = 0;
+	if (!all_read)
+		return (0);
+	while (all_read[i])
 	{
-		to_del = temp;
-		temp = temp->next;
-		ft_lstdelone(to_del, del);
+		if (all_read[i] == '\n')
+			return (1);
+		i++;
 	}
-	*lst = NULL;
+	return (0);
 }
