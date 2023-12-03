@@ -6,13 +6,13 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:35:19 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 21:34:25 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:58:30 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_set(char const *set, char const c)
+static int	in_set(char const *set, char const c)
 {
 	int	i;
 
@@ -26,6 +26,12 @@ int	in_set(char const *set, char const c)
 	return (0);
 }
 
+/// @brief Allocates (with malloc(3)) and returns a copy of
+/// ’s1’ with the characters specified in ’set’ removed
+/// from the beginning and the end of the string.
+/// @param s1  The string to be trimmed.
+/// @param set The reference set of characters to trim.
+/// @return The trimmed string. NULL if the allocation fails.
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;

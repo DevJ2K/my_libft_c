@@ -6,13 +6,14 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:40:07 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 22:33:05 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:49:45 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/// @brief The ft_memcmp() function compares byte string s1 against byte string s2.
+/// @brief The ft_memcmp() function compares byte string s1 against byte
+/// string s2.
 /// Both strings are assumed to be n bytes long.
 /// @param s1 The string you want to compare against the s2.
 /// @param s2 The string you want to compare against the s1.

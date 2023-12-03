@@ -6,13 +6,16 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:16:00 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 21:47:54 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:56:19 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
+/// @brief The length of the string.
+/// @param s The string you want to get length.
+/// @return The length of the string.
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;

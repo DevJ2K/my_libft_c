@@ -6,13 +6,14 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:21:25 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 22:36:09 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:50:01 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/// @brief The memmove() function copies len bytes from string src to string dst.
+/// @brief The memmove() function copies len bytes from string src to
+/// string dst.
 /// The two strings may overlap; the copy is always done in a non-destructive
 /// manner.
 /// @param dest The dest of the copie.

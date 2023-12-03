@@ -6,13 +6,13 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:02:27 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 21:35:09 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:59:21 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup_start_to_end(const char *s1, int start, int end)
+static char	*ft_strdup_start_to_end(const char *s1, int start, int end)
 {
 	int		i;
 	char	*s2;
@@ -30,7 +30,7 @@ char	*ft_strdup_start_to_end(const char *s1, int start, int end)
 	return (s2);
 }
 
-int	count_split(char const *str, char c)
+static int	count_split(char const *str, char c)
 {
 	int		i;
 	int		count;
@@ -101,6 +101,14 @@ static int	main_loop(int i, char const *s, char c, char **tab)
 	return (0);
 }
 
+/// @brief Allocates (with malloc(3)) and returns an array
+/// of strings obtained by splitting ’s’ using the
+/// character ’c’ as a delimiter. The array must end
+/// with a NULL pointer.
+/// @param s The string to be split.
+/// @param c The delimiter character.
+/// @return The array of new strings resulting from the split.
+/// NULL if the allocation fails.
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

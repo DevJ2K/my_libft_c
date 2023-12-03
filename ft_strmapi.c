@@ -6,12 +6,16 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:54:54 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/03 21:35:32 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:56:24 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/// @brief 
+/// @param s
+/// @param f
+/// @return
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
