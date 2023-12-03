@@ -6,14 +6,14 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:09:25 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/08 12:43:51 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:16:07 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-long int	n_len(long int nb)
+static long int	n_len(long int nb)
 {
 	long int	len;
 	long int	power;
@@ -33,7 +33,7 @@ long int	n_len(long int nb)
 	return (len);
 }
 
-long int	ft_power(long int p)
+static long int	ft_power(long int p)
 {
 	long int	pow;
 
@@ -46,6 +46,10 @@ long int	ft_power(long int p)
 	return (pow);
 }
 
+/// @brief The ft_itoa() function constructs a string representation of an integer.
+/// @param n Is the integer to be converted to string representation.
+/// @return The function ft_itoa() returns the value string.
+/// NULL is memory allocation fails.
 char	*ft_itoa(int n)
 {
 	long int	len;

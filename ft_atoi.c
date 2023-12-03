@@ -6,13 +6,17 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:07:17 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/11 11:12:16 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:04:52 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+/// @brief The ft_atoi() function converts the initial portion of the string
+/// pointed to by str to int representation.
+/// @param str The string you want to convert to int.
+/// @return The string convert to int.
 int	ft_atoi(const char *str)
 {
 	int	nb;
