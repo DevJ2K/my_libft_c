@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:39:05 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 16:11:21 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 21:31:23 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	i = -1;
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		sub = malloc(sizeof(char));

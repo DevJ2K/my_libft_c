@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:54:54 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 22:32:53 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 21:35:32 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*mapstr;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	mapstr = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!mapstr)

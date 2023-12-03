@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:35:19 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/10 22:34:19 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 21:34:25 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !set)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	while (in_set(set, s1[j]))
 		j++;
