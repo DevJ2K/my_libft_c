@@ -6,12 +6,15 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:24:20 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/08 15:31:53 by tajavon          ###   ########.fr       */
+/*   Updated: 2023/12/03 22:40:20 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+/// @brief The function writes a number in a file descriptor.
+/// @param n The number you want to write.
+/// @param fd The file descriptor.
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	nb;
