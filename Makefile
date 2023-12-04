@@ -1,52 +1,64 @@
-LIBC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
-		ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c \
-		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c \
-		ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
-		ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strcpy.c \
-		ft_strncat.c get_next_line.c get_next_line_utils.c
-
-ADDITIONAL =	ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-				ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c ft_striteri.c
-
-BONUS =	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
-		ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
-
-SRCS = ${LIBC} ${ADDITIONAL}
-
-SRCSALL = ${LIBC} ${ADDITIONAL} ${BONUS}
-
-OBJS = ${SRCS:.c=.o}
-
-OBJSALL = ${SRCSALL:.c=.o}
-
+########################################
+########## VARIABLES
 NAME = libft.a
-
 CC = gcc
+INCLUDES = ./includes
+RM			= rm -rf
+CFLAGS = -Wall -Werror -Wextra -I
+SRCS_DIR = srcs/
 
-CFLAGS = -Wall -Werror -Wextra -I ./
+########################################
+########## COLORS
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
+########################################
+########## SOURCES
+LIBC_F =	ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
+		ft_isascii ft_isdigit ft_isprint ft_memchr \
+		ft_memcmp ft_memcpy ft_memmove ft_memset ft_strchr \
+		ft_strdup ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
+		ft_strnstr ft_strrchr ft_tolower ft_toupper ft_strcpy \
+		ft_strncat get_next_line get_next_line_utils
+LIBC		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(LIBC_F)))
+
+ADDITIONAL_F =	ft_itoa ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd \
+				ft_split ft_strjoin ft_strmapi ft_strtrim ft_substr ft_striteri
+ADDITIONAL		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(ADDITIONAL_F)))
+
+BONUS_F =	ft_lstadd_back ft_lstadd_front ft_lstclear \
+		ft_lstdelone ft_lstiter ft_lstlast \
+		ft_lstmap ft_lstnew ft_lstsize
+BONUS		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BONUS_F)))
+
+SRCS = $(LIBC) $(ADDITIONAL) $(BONUS)
+
+OBJS = $(SRCS:.c=.o)
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
 
-${NAME}:	${OBJS}
-	ar -rsc ${NAME} ${OBJS}
+########################################
+########## RULES
 
-bonus:	${OBJSALL}
-		ar -rsc ${NAME} ${OBJSALL}
+$(NAME):	$(OBJS)
+	ar -rsc $(NAME) $(OBJS)
 
-all:	${NAME}
+all:	$(NAME)
 
 clean:
-		rm -f ${OBJSALL}
+		$(RM) $(OBJS)
 
-fclean:	clean;
-		rm -f ${NAME}
+fclean:	clean
+		$(RM) $(NAME)
 
 re:		fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCSALL)
-	gcc -nostartfiles -shared -o libft.so $(OBJSALL)
-
-.PHONY: all clean fclean re bonus so
+.PHONY: all clean fclean re
