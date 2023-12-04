@@ -4,6 +4,7 @@ NAME = libft.a
 CC = gcc
 INCLUDES = ./includes
 RM			= rm -rf
+AR			= ar -crs
 CFLAGS = -Wall -Werror -Wextra -I
 SRCS_DIR = srcs/
 
@@ -43,21 +44,24 @@ SRCS = $(LIBC) $(ADDITIONAL) $(BONUS)
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
-		$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
+		@echo "$(YELLOW)Compilation of : $<..$(DEF_COLOR)"
+		@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
 
 ########################################
 ########## RULES
-
 $(NAME):	$(OBJS)
-	ar -rsc $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "$(GREEN)Libft successfully compiled !$(DEF_COLOR)"
 
 all:	$(NAME)
 
 clean:
-		$(RM) $(OBJS)
+		@$(RM) $(OBJS)
+		@echo "$(RED)Deletion of objects files !$(DEF_COLOR)"
 
 fclean:	clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
+		@echo "$(RED)Deletion of $(NAME) !$(DEF_COLOR)"
 
 re:		fclean all
 
