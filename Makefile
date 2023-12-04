@@ -57,11 +57,11 @@ all:	$(NAME)
 
 clean:
 		@$(RM) $(OBJS)
-		@echo "$(RED)Deletion of objects files !$(DEF_COLOR)"
+		@echo "$(RED)Deletion of $(OBJS)$(DEF_COLOR)"
 
 fclean:	clean
 		@$(RM) $(NAME)
-		@echo "$(RED)Deletion of $(NAME) !$(DEF_COLOR)"
+		@echo "$(RED)Deletion of $(NAME)$(DEF_COLOR)"
 
 re:		fclean all
 
