@@ -27,7 +27,7 @@ LIBC_F =	ft_atoi ft_bzero ft_calloc ft_isalnum ft_isalpha \
 		ft_memcmp ft_memcpy ft_memmove ft_memset ft_strchr \
 		ft_strdup ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
 		ft_strnstr ft_strrchr ft_tolower ft_toupper ft_strcpy \
-		ft_strncat get_next_line get_next_line_utils
+		ft_strncat get_next_line get_next_line_utils ft_error
 LIBC		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(LIBC_F)))
 
 ADDITIONAL_F =	ft_itoa ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd \
