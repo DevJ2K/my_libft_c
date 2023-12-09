@@ -39,7 +39,11 @@ BONUS_F =	ft_lstadd_back ft_lstadd_front ft_lstclear \
 		ft_lstmap ft_lstnew ft_lstsize
 BONUS		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BONUS_F)))
 
-SRCS = $(LIBC) $(ADDITIONAL) $(BONUS)
+PRINTF_F = ft_printf ft_putchar ft_puthexa ft_strlen \
+			ft_putnbr ft_putptr ft_putstr ft_putunsigned
+PRINTF =	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(PRINTF_F)))
+
+SRCS = $(LIBC) $(ADDITIONAL) $(BONUS) $(PRINTF)
 
 OBJS = $(SRCS:.c=.o)
 
