@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:49:17 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/04 13:49:58 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/01/07 21:10:12 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_open(char *path, char methods)
 {
 	int	fd;
 
+	fd = 0;
 	if (methods == 'r')
 		fd = open(path, O_RDONLY, 0777);
 	else if (methods == 'w')

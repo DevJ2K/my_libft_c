@@ -1,7 +1,7 @@
 ########################################
 ########## VARIABLES
 NAME = libft.a
-CC = gcc
+CC = cc
 INCLUDES = ./includes
 RM			= rm -rf
 AR			= ar -crs
@@ -12,13 +12,14 @@ SRCS_DIR = srcs/
 ########## COLORS
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m
+BOLD_RED = \033[1;91m
 RED = \033[0;91m
-GREEN = \033[0;92m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
+GREEN = \033[1;92m
+YELLOW = \033[1;93m
+BLUE = \033[1;94m
+MAGENTA = \033[1;95m
+CYAN = \033[1;96m
+WHITE = \033[1;97m
 
 ########################################
 ########## SOURCES
@@ -48,14 +49,20 @@ SRCS = $(LIBC) $(ADDITIONAL) $(BONUS) $(PRINTF)
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
-		@echo "$(YELLOW)Compilation of : $<..$(DEF_COLOR)"
+#@echo "$(YELLOW)Compilation of : $<..$(DEF_COLOR)"
 		@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
 
 ########################################
 ########## RULES
 $(NAME):	$(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(GREEN)Libft successfully compiled !$(DEF_COLOR)"
+	@echo "$(GREEN)Libft successfully compiled into$(DEF_COLOR) $(WHITE)$(NAME)$(DEF_COLOR) $(GREEN)!$(DEF_COLOR)"
+
+$(OBJS): | display_message
+
+display_message:
+	@echo "$(CYAN)Libft is compiling...$(DEF_COLOR)"
+
 
 all:	$(NAME)
 
@@ -65,7 +72,7 @@ clean:
 
 fclean:	clean
 		@$(RM) $(NAME)
-		@echo "$(RED)Deletion of $(NAME)$(DEF_COLOR)"
+		@echo "$(BOLD_RED)Deletion of $(NAME)$(DEF_COLOR)"
 
 re:		fclean all
 
