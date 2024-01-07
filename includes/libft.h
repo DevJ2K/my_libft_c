@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:49:09 by tajavon           #+#    #+#             */
-/*   Updated: 2024/01/07 20:47:11 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/01/07 22:18:00 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,16 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 /// @param s2 The suffix string.
 /// @return The new string. NULL if the allocation fails.
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/// @brief The ft_strncat() function append a copy of the null-terminated
+/// string src to the end of the null-terminated string dest, then add
+/// a terminating ‘\0’.  The string dest must have sufficient space
+/// to hold the result. The ft_strncat() function appends not more than
+/// nb characters from src, and then adds a terminating ‘\0’.
+/// @param dest The destination of the concatenation.
+/// @param src The source string.
+/// @param nb The nb char you wants to add from src
+/// @return The strncat() functions return the pointer dest.
 char	*ft_strncat(char *dest, char *src, size_t nb);
 
 /// @brief strlcat() appends string src to the end of dst. It will
@@ -227,6 +237,16 @@ size_t	ft_strlen(const char *s);
 /// @return The string created from the successive applications of ’f’.
 /// Returns NULL if the allocation fails.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/// @brief ft_strncmp() functions lexicographically compare the
+/// null-terminated strings s1 and s2. The ft_strncmp() function
+/// compares not more than n characters
+/// @param s1 The first string to compare.
+/// @param s2 The second string to compare.
+/// @param n The number of characters you wants to compare.
+/// @return The ft_strncmp() functions return an integer greater than,
+/// equal to, or less than 0, according as the string s1 is greater
+/// than, equal to, or less than the string s2.
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /// @brief The strnstr() function locates the first occurrence of the
@@ -342,6 +362,13 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 /// of a node if needed.
 /// @return The new list. NULL if the allocation fails.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/// @brief Write a function that returns a line read from a
+/// file descriptor
+/// @param fd The file descriptor to read from
+/// @return Read line in correct behavior or
+/// NULL if there is nothing else to read, or an error
+/// occurred
 char	*get_next_line(int fd);
 
 /// @brief Displays error and exits with the errnum you given.

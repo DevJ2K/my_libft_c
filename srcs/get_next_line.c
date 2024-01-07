@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 00:43:42 by tajavon           #+#    #+#             */
-/*   Updated: 2023/12/01 12:24:47 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/01/07 22:18:33 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,12 @@ static void	clean_read_line(char **all_read)
 	*all_read = temp;
 }
 
+/// @brief Write a function that returns a line read from a
+/// file descriptor
+/// @param fd The file descriptor to read from
+/// @return Read line in correct behavior or
+/// NULL if there is nothing else to read, or an error
+/// occurred
 char	*get_next_line(int fd)
 {
 	static char	*all_read[1024];
